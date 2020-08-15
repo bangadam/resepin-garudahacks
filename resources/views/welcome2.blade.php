@@ -51,45 +51,43 @@
 
     <!-- Banner -->
     <section id="banner">
-        <h2>Resepin</h2>
+        <h2>Welcome to Resepin!</h2>
         <p>Prescription on the cloud</p>
-        <ul class="actions">
+        <p style="margin: 0px 75px 0px 75px; font-size: 1.25em;">This website will help standardise doctors' prescriptions for patients, in order to ensure that the use of drugs is in accordance to the recommended dosage.</p><br/>
+        <p style="margin: 0px 75px 0px 75px; font-size: 1.25em;">Our database is also integrated with patients, doctors and pharmacies all over Indonesia. With only your identity card number, your doctor could digitally prescribe your medication, for you to collect from any pharmacy.</p>
+        <!-- <ul class="actions">
             <li>
                 <a href="#" class="button big">Enter</a>
             </li>
-        </ul>
+        </ul> -->
     </section>
 
     <!-- One -->
     <section id="one" class="wrapper style1 special">
         <div class="container">
             <header class="major">
-                <h2>Consectetur adipisicing elit</h2>
-                <p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
+                <h2>Are you a patient, a doctor or a pharmacist?</h2>
             </header>
             <div class="row 150%">
                 <div class="4u 12u$(medium)">
                     <section class="box">
-                        <i class="icon big rounded color1 fa-cloud"></i>
-                        <h3>Lorem ipsum dolor</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam
-                            magni minus aut modi aliquid.</p>
+                        <i class="icon big rounded color1 fa fa-user"></i>
+                        <h3>Patient</h3>
+                        <p>As a patient, you will have access to records and history of your doctor prescribed medications, and collect them for any pharmacy of choice.</p>
                     </section>
                 </div>
                 <div class="4u 12u$(medium)">
                     <section class="box">
-                        <i class="icon big rounded color9 fa-desktop"></i>
-                        <h3>Consectetur adipisicing</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur
-                            repellat debitis maxime.</p>
+                        <i class="icon big rounded color9 fa fa-user-md"></i>
+                        <h3>Doctor</h3>
+                        <p>As a doctor, you will be able to input prescription data for your patients, and ensure that the pharmacists only give the drugs with respected dosage.</p>
                     </section>
                 </div>
                 <div class="4u$ 12u$(medium)">
                     <section class="box">
-                        <i class="icon big rounded color6 fa-rocket"></i>
-                        <h3>Adipisicing elit totam</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt
-                            molestias. Ipsam, voluptate vero.</p>
+                        <i class="icon big rounded color6 fa fa-medkit"></i>
+                        <h3>Pharmacist</h3>
+                        <p>As a pharmacist, you could see the prescription each patient has yet to collect, and mark as collected medications that are successfully purchased.</p>
                     </section>
                 </div>
             </div>
@@ -139,7 +137,7 @@
 			</section> -->
 
     <!-- Three -->
-    <section id="three" class="wrapper style3 special">
+    <!-- <section id="three" class="wrapper style3 special">
         <div class="container">
             <header class="major">
                 <h2>Consectetur adipisicing elit</h2>
@@ -166,51 +164,32 @@
                 </div>
             </form>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
+            <header class="major">
+                <h2>Why use Resepin?</h2>
+            </header>
             <section class="links">
                 <div class="row">
-                    <section class="3u 6u(medium) 12u$(small)">
-                        <h3>Lorem ipsum dolor</h3>
+                    <section class="4u 6u(medium) 12u$(small)">
+                        <h3>The prescription is controlled</h3>
                         <ul class="unstyled">
-                            <li><a href="#">Lorem ipsum dolor sit</a></li>
-                            <li><a href="#">Nesciunt itaque, alias possimus</a></li>
-                            <li><a href="#">Optio rerum beatae autem</a></li>
-                            <li><a href="#">Nostrum nemo dolorum facilis</a></li>
-                            <li><a href="#">Quo fugit dolor totam</a></li>
+                            <li>With all doctors' prescriptions digitally recorded within RESEPIN, the procedure can help ensure that the medication purchase, dosage, and quantity are as intended; which might otherwise cause serious harm to the patients.</li>
                         </ul>
                     </section>
-                    <section class="3u 6u$(medium) 12u$(small)">
-                        <h3>Culpa quia, nesciunt</h3>
+                    <section class="4u 6u$(medium) 12u$(small)">
+                        <h3>The prescription history could be monitored</h3>
                         <ul class="unstyled">
-                            <li><a href="#">Lorem ipsum dolor sit</a></li>
-                            <li><a href="#">Reiciendis dicta laboriosam enim</a></li>
-                            <li><a href="#">Corporis, non aut rerum</a></li>
-                            <li><a href="#">Laboriosam nulla voluptas, harum</a></li>
-                            <li><a href="#">Facere eligendi, inventore dolor</a></li>
+                            <li>With different access levels, stakeholders can view, filter, and analyse the prescriptions over a specific time range.</li>
                         </ul>
                     </section>
-                    <section class="3u 6u(medium) 12u$(small)">
-                        <h3>Neque, dolore, facere</h3>
+                    <section class="4u 6u(medium) 12u$(small)">
+                        <h3>Integrated database</h3>
                         <ul class="unstyled">
-                            <li><a href="#">Lorem ipsum dolor sit</a></li>
-                            <li><a href="#">Distinctio, inventore quidem nesciunt</a></li>
-                            <li><a href="#">Explicabo inventore itaque autem</a></li>
-                            <li><a href="#">Aperiam harum, sint quibusdam</a></li>
-                            <li><a href="#">Labore excepturi assumenda</a></li>
-                        </ul>
-                    </section>
-                    <section class="3u$ 6u$(medium) 12u$(small)">
-                        <h3>Illum, tempori, saepe</h3>
-                        <ul class="unstyled">
-                            <li><a href="#">Lorem ipsum dolor sit</a></li>
-                            <li><a href="#">Recusandae, culpa necessita nam</a></li>
-                            <li><a href="#">Cupiditate, debitis adipisci blandi</a></li>
-                            <li><a href="#">Tempore nam, enim quia</a></li>
-                            <li><a href="#">Explicabo molestiae dolor labore</a></li>
+                            <li>Our database is also integrated with patients, doctors and pharmacies all over Indonesia. The centralised and standardised system allows tracking, monitoring and analysing of the relevant prescription data.</li>
                         </ul>
                     </section>
                 </div>
@@ -223,7 +202,7 @@
                         <li>Images: <a href="http://unsplash.com">Unsplash</a></li>
                     </ul>
                 </div>
-                <div class="4u$ 12u$(medium)">
+                <!-- <div class="4u$ 12u$(medium)">
                     <ul class="icons">
                         <li>
                             <a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
@@ -238,7 +217,7 @@
                             <a class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
