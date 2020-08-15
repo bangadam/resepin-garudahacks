@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Apotek;
 use App\Models\Apoteker;
+use App\Models\Pasien;
 use App\User;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
@@ -12,6 +13,11 @@ class MedicationController extends Controller
 {
     public function index() {
         return view('medication.index');
+    }
+
+    public function indexPasien() {
+        $pasien = Pasien::with('resep')->where('id_user', auth()->user()->id)->first();
+        return view('medication.indexPasien', compact('pasien'));
     }
 
     public function searchNik(Request $request) {

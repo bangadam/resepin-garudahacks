@@ -13,4 +13,8 @@ class DashboardController extends Controller
     public function apoteker() {
         return view('dashboard.apoteker');
     }
+
+    public function pasien() {
+        return view('dashboard.pasien');
+    }
 }

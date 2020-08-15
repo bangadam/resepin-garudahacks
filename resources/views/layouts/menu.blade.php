@@ -18,9 +18,6 @@
 
 
 @if(auth()->user()->load('hasRoles.role')->hasRoles->role->name == 'apoteker')
-{{--    <li class="{{ Request::is('apoteks*') ? 'active' : '' }}">--}}
-{{--        <a href="{{ route('apoteks.index') }}"><i class="fa fa-edit"></i><span>Apoteks</span></a>--}}
-{{--    </li>--}}
 
     <li class="{{ Request::is('dashboard*') ? 'active' : '' }}">
         <a href="{{ route('dashboard.apoteker') }}"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
@@ -34,6 +31,22 @@
         <a href="{{ route('apotekers.profile') }}"><i class="fa fa-user"></i><span>My Profile</span></a>
     </li>
 @endif
+
+@if(auth()->user()->load('hasRoles.role')->hasRoles->role->name == 'pasien')
+
+    <li class="{{ Request::is('dashboard*') ? 'active' : '' }}">
+        <a href="{{ route('dashboard.pasien') }}"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+    </li>
+
+    <li class="{{ Request::is('medication*') ? 'active' : '' }}">
+        <a href="{{ route('medication.index') }}"><i class="fa fa-user-md"></i><span>Medications Detail</span></a>
+    </li>
+
+    <li class="{{ Request::is('pasien*') ? 'active' : '' }}">
+        <a href="{{ route('pasiens.profile') }}"><i class="fa fa-user"></i><span>My Profile</span></a>
+    </li>
+@endif
+
 {{--<li class="{{ Request::is('apotekers*') ? 'active' : '' }}">--}}
 {{--    <a href="{{ route('apotekers.index') }}"><i class="fa fa-edit"></i><span>Apotekers</span></a>--}}
 {{--</li>--}}

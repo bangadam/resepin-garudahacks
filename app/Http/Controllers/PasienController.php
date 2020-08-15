@@ -6,10 +6,12 @@ use App\DataTables\PasienDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreatePasienRequest;
 use App\Http\Requests\UpdatePasienRequest;
+use App\Models\Pasien;
 use App\Repositories\PasienRepository;
 use App\User;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Response;
 
@@ -164,5 +166,55 @@ class PasienController extends AppBaseController
         Flash::success('Pasien deleted successfully.');
 
         return redirect(route('pasiens.index'));
+    }
+
+    public function profile()
+    {
+        $user = auth()->user();
+        $pasien = Pasien::with(['user'])->where('id_user', $user->id)->first();
+
+        if (empty($pasien)) {
+            Flash::error('Pasien not found');
+
+            return redirect()->back();
+        }
+
+        return view('pasiens.profile-edit')->with('pasien', $pasien);
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $pasien = Pasien::with(['user'])->where('id_user', auth()->user()->id)->first();
+
+        if (empty($pasien)) {
+            Flash::error('Pasien not found');
+
+            return redirect(route('dokters.index'));
+        }
+
+        $pasien->update($request->only(['dob']));
+
+        if (empty($request->password)) {
+            $pasien->user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'alamat' => $request->alamat_user,
+                'telepon' => $request->telepon,
+                'nik' => $request->nik,
+            ]);
+        } else {
+            $pasien->user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'alamat' => $request->alamat_user,
+                'telepon' => $request->telepon,
+                'nik' => $request->nik,
+                'password' => bcrypt($request->password),
+            ]);
+        }
+
+        Flash::success('Profile updated successfully.');
+
+        return redirect(route('pasiens.profile'));
     }
 }

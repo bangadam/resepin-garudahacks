@@ -42,6 +42,13 @@ Route::group(['middleware' => 'apotik', 'prefix' => 'apoteker'], function() {
     Route::patch('/my-profile/{id}/update-profile', 'MedicationController@updateProfile')->name('apotekers.updateProfile');
 });
 
+Route::group(['middleware' => 'pasien', 'prefix' => 'pasien'], function() {
+    Route::get('/dashboard', 'DashboardController@apoteker')->name('dashboard.pasien');
+    Route::get('/medication', 'MedicationController@indexPasien')->name('medication.index');
+    Route::get('/my-profile', 'PasienController@profile')->name('pasiens.profile');
+    Route::patch('/my-profile/{id}/update-profile', 'PasienController@updateProfile')->name('pasiens.updateProfile');
+    Route::get('/resep/{id_resep}', 'ResepController@getResep')->name('resep.getResep');
+});
 
 //Route::resource('apoteks', 'ApotekController');
 //

@@ -60,6 +60,6 @@ class Pasien extends Model
     }
 
     public function resep() {
-        return $this->hasMany(Resep::class, 'id_user_pasien', 'id');
+        return $this->hasMany(Resep::class, 'id_user_pasien', 'id_user');
     }
 }
