@@ -187,4 +187,23 @@ class ResepController extends AppBaseController
         $resep = Resep::with('resepDetail.obat')->find($id);
         return response()->json($resep->resepDetail);
     }
+
+    public function tebusResep($nik,$id_resep,$tebus) {
+        $resep = Resep::find($id_resep);
+        if($tebus == 'iya') {
+            $resep->update([
+                'tanggal_tebus' => date('Y-m-d'),
+                'id_user_apoteker' => auth()->user()->id
+            ]);
+        } else if($tebus == 'tidak') {
+            $resep->update([
+                'tanggal_tebus' => null,
+                'id_user_apoteker' => null
+            ]);
+        }
+
+        Flash::success('Tebus resep successfully.');
+
+        return redirect('/apoteker/medication/search?nik='.$nik);
+    }
 }

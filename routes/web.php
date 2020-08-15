@@ -34,6 +34,8 @@ Route::group(['middleware' => 'dokter', 'prefix' => 'dokter'], function() {
 
 Route::group(['middleware' => 'apotik', 'prefix' => 'apoteker'], function() {
     Route::get('/dashboard', 'DashboardController@apoteker')->name('dashboard.apoteker');
+    Route::get('/resep/{id_resep}', 'ResepController@getResep')->name('resep.getResep');
+    Route::get('/resep/{nik}/tebus/{id_resep}/tebus={tebus}', 'ResepController@tebusResep')->name('reseps.tebus');
     Route::get('/medication', 'MedicationController@index')->name('medication.index');
     Route::get('/medication/search', 'MedicationController@searchNik')->name('medication.searchNik');
     Route::get('/my-profile', 'MedicationController@profile')->name('apotekers.profile');
