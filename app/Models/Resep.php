@@ -65,4 +65,8 @@ class Resep extends Model
     public function resepDetail() {
         return $this->hasMany(ResepDetail::class, 'id_resep', 'id');
     }
+
+    public function dokter() {
+        return $this->hasOne(Dokter::class, 'id', 'id_user_dokter');
+    }
 }

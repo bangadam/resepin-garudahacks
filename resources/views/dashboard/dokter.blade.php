@@ -100,35 +100,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <script>
         function lineChart() {
-            data = [
-                [100, 300],
-                [10, 32],
-            ];
-            labels = [
-                ["Patient"],
-                ["Drugs"],
-            ];
-            var ctx = document.getElementById("lineChart").getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Patients',
-                            data: data[0],
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            $.ajax({
+                url: '/dokter/count/lineChart1',
+                method: 'GET',
+                success: function (data) {
+                    // console.log(data)
+
+                    data = [
+                        [5, 3, 4, 5],
+                        [5, 1, 4, 5],
+                    ];
+                    labels = [
+                        '2020-08-14',
+                        '2020-08-15',
+                        '2020-08-13',
+                        '2020-08-12',
+                    ];
+                    var ctx = document.getElementById("lineChart").getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: labels,
+                            datasets: [
+                                {
+                                    label: 'Number of patient',
+                                    data: data[0],
+                                    borderColor: 'rgba(182, 167, 193, 1)',
+                                    backgroundColor: 'rgba(182, 167, 193, 0.2)',
+                                },
+                                {
+                                    label: 'Number of drugs',
+                                    data: data[1],
+                                    borderColor: 'rgba(132, 241, 230, 1)',
+                                    backgroundColor: 'rgba(132, 241, 230, 0.2)',
+                                },
+                            ]
                         },
-                        {
-                            label: 'Drugs',
-                            data: data[1],
-                            borderColor: 'rgba(192, 192, 192, 1)',
-                            backgroundColor: 'rgba(192, 192, 192, 0.2)',
-                        }
-                    ]
-                },
-            });
+                    });
+                }
+            })
         }
 
         function pieChart() {

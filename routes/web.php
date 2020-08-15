@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Resep;
+use App\Models\ResepDetail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +32,25 @@ Route::group(['middleware' => 'dokter', 'prefix' => 'dokter'], function() {
     Route::patch('dokters/{id}/update-profile', 'DokterController@updateProfile')->name('dokters.updateProfile');
     Route::resource('dokters', 'DokterController')->only('edit', 'update');
     Route::resource('obats', 'ObatController');
+
+    Route::get('/count/lineChart1', function() {
+        $resep = Resep::with('resepDetail')->where('id_user_dokter', auth()->user()->id)->groupBy('tanggal_resep')
+            ->get();
+
+        $y1 = $resep->count();
+        $y2 = [];
+        $x = [];
+
+        foreach ($resep as $key => $item) {
+            array_push($x, $item->tanggal_resep->format('Y-m-d'));
+            $i = 0;
+            foreach($item->resepDetail as $data) {
+                $y2[$i] = ++$i;
+            }
+        }
+//        dd($x, $y1, $y2);
+       return response()->json(['y1' => $y1, 'y2' => $y2, 'x' => $x]);
+    });
 });
 
 Route::group(['middleware' => 'apotik', 'prefix' => 'apoteker'], function() {
