@@ -13,6 +13,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = auth()->user()->load('hasRoles.role');
+        if($user->hasRoles->role->name == 'pasien') {
+            return redirect()->route('dashboard.pasien');
+        } else if ($user->hasRoles->role->name == 'dokter') {
+            return redirect()->route('dashboard.dokter');
+        } else if ($user->hasRoles->role->name == 'apoteker') {
+            return redirect()->route('dashboard.apoteker');
+        }
     }
 }
