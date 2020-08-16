@@ -174,8 +174,18 @@
                     datasets: [
                         {
                             data: data,
-                            borderColor: ['rgba(75, 192, 192, 1)', 'rgba(192, 0, 0, 1)'],
-                            backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(192, 0, 0, 0.2)'],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(192, 0, 0, 0.8)',
+                                'rgba(18, 30, 196,0.8)',
+                                'rgba(18, 196, 181, 0.8)',
+                                'rgba(196, 184, 18, 0.8)',
+                                'rgba(196, 27, 18, 0.8)',
+                                'rgba(196, 18, 116, 0.8)',
+                                'rgba(63, 18, 196, 0.8)',
+                                'rgba(75, 214, 0, 0.8)',
+                                'rgba(154, 214, 0, 0.8)'
+                            ],
                         }
                     ]
                 },
@@ -190,12 +200,14 @@
 
         function lineChart2() {
             data = [
-                [100, 300],
-                [10, 32],
+                [5, 3, 4, 5],
+                [5, 1, 4, 5],
             ];
             labels = [
-                ["Patient"],
-                ["Drugs"],
+                '2020-08-14',
+                '2020-08-15',
+                '2020-08-13',
+                '2020-08-12',
             ];
             var ctx = document.getElementById("lineChart2").getContext('2d');
             var myChart = new Chart(ctx, {
@@ -204,17 +216,15 @@
                     labels: labels,
                     datasets: [
                         {
-                            label: 'Patients',
+                            label: 'Number of patient',
                             data: data[0],
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            backgroundColor: 'rgba(0, 111, 214, 0.8)',
                         },
                         {
-                            label: 'Drugs',
+                            label: 'Number of drugs',
                             data: data[1],
-                            borderColor: 'rgba(192, 192, 192, 1)',
-                            backgroundColor: 'rgba(192, 192, 192, 0.2)',
-                        }
+                            backgroundColor: 'rgba(178, 0, 214, 0.8)',
+                        },
                     ]
                 },
             });
