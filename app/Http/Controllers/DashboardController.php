@@ -19,7 +19,6 @@ class DashboardController extends Controller
     }
 
     public function pasien() {
-
         return view('dashboard.pasien');
     }
 }
