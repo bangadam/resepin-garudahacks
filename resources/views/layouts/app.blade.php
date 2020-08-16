@@ -37,7 +37,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>InfyOm</b>
+                <b>Resepin</b>
             </a>
 
             <!-- Header Navbar -->
