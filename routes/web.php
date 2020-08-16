@@ -64,7 +64,7 @@ Route::group(['middleware' => 'apotik', 'prefix' => 'apoteker'], function() {
 });
 
 Route::group(['middleware' => 'pasien', 'prefix' => 'pasien'], function() {
-    Route::get('/dashboard', 'DashboardController@apoteker')->name('dashboard.pasien');
+    Route::get('/dashboard', 'DashboardController@pasien')->name('dashboard.pasien');
     Route::get('/medication', 'MedicationController@indexPasien')->name('medication.index');
     Route::get('/my-profile', 'PasienController@profile')->name('pasiens.profile');
     Route::patch('/my-profile/{id}/update-profile', 'PasienController@updateProfile')->name('pasiens.updateProfile');
