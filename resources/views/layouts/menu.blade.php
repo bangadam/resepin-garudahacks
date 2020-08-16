@@ -39,7 +39,7 @@
     </li>
 
     <li class="">
-        <a href="{{ route('medication.indexPasien') }}"><i class="fa fa-user-md"></i><span>Medications Detail</span></a>
+        <a href="{{ route('medication.index') }}"><i class="fa fa-user-md"></i><span>Medications Detail</span></a>
     </li>
 
     <li class="">
